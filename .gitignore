@@ -1,6 +1,4 @@
 __pycache__
 nohup.out
-chat/knowledge/*
-!chat/knowledge/.gitkeep
 *SAVED*
 *.csv
