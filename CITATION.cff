@@ -17,4 +17,5 @@ authors:
   given-names: "Jun"
 title: "SimplyRetrieve: A Private and Lightweight Retrieval-Centric Generative AI Tool"
 date-released: 2023-07-28
+doi: 10.5281/zenodo.8213550
 url: "https://github.com/RCGAI/SimplyRetrieve"
