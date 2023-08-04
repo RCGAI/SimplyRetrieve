@@ -2,7 +2,7 @@
 
 ## What is SimplyRetrieve?
 
-![Tool Overall](../docs/fig_overall.png)
+![Tool Overall](docs/fig_overall.png)
 
 This repository provides an implementation of SimplyRetrieve: A Private and Lightweight Retrieval-Centric Generative AI Tool. SimplyRetrieve is an open-source tool with the goal of providing a fully localized, lightweight and user-friendly GUI and API access of Retrieval-Centric Generative (RCG) AI architecture to the machine learning community. Some features are:
 - GUI and API based Retrieval-Centric Generative AI architecture
@@ -47,7 +47,7 @@ CUDA_VISIBLE_DEVICES=0 python chat.py --config configs/default_release.json
 ```
 Then, access the web-based GUI from your favorite browser by navigating to `http://<LOCAL_SERVER_IP>:7860`. Replace `<LOCAL_SERVER_IP>` with the IP address of your GPU server. And this is it, you are ready to go! Below is a sample chat screenshot of the GUI. It provides a familiar streaming chatbot interface with a comprehensive retrieval-centric tuning panel. For API access, please refer to the sample scripts located in the `examples/` directory.
 
-![Platform GUIsample](../docs/gui_english.png)
+![Platform GUIsample](docs/gui_english.png)
 
 ## Limitation
 It is important to note that this tool does not provide a foolproof solution for ensuring a completely safe and responsible response from generative AI models, even within a retrieval-centric architecture. The development of safer, interpretable, and responsible AI systems remains an active area of research and ongoing effort.
