@@ -29,7 +29,7 @@ parser.add_argument('--out_docs', type=str, default='local_knowledgebase')
 parser.add_argument('--out_docsext', type=str, default='.tsv')
 
 parser.add_argument('--do_embed', type=bool, default=True)
-parser.add_argument('--embed_encoder', type=str, default='/vol1/user/youyang/hf_models/multilingual-e5-base')
+parser.add_argument('--embed_encoder', type=str, default='intfloat/multilingual-e5-base')
 parser.add_argument('--out_embed', type=str, default='local_embed')
 parser.add_argument('--out_embedext', type=str, default='.npy')
 
