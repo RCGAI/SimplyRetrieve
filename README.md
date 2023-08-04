@@ -60,6 +60,7 @@ If you find our work useful, please cite us as follow:
 ```
 @software{Ng_SimplyRetrieve_A_Private_2023,
 author = {Ng, Youyang and Miyashita, Daisuke and Hoshi, Yasuto and Morioka, Yasuhiro and Torii, Osamu and Kodama, Tomoya and Deguchi, Jun},
+doi = {10.5281/zenodo.8213550},
 month = jul,
 title = {{SimplyRetrieve: A Private and Lightweight Retrieval-Centric Generative AI Tool}},
 url = {https://github.com/RCGAI/SimplyRetrieve},
