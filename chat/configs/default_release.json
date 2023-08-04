@@ -1,0 +1,55 @@
+{
+    "llm_config": {
+        "model_args": {
+            "model_type": "ehartford/Wizard-Vicuna-13B-Uncensored",
+            "device_map": {"": 0},
+            "quantization_config": {
+                "quantization_type": "transformers.BitsAndBytesConfig",
+                "quantization_config_config": {
+                    "load_in_8bit": true,
+                    "llm_int8_threshold": 6.0,
+                    "has_fp16_weights": false
+                }
+            }
+        },
+        "pipeline_args": {
+            "max_new_tokens": 512,
+            "top_k": 50,
+            "temperature": 0.0,
+            "repetition_penalty": 1.204819277108434
+        }
+    },
+    "prompt_config": {
+	"prompt_aiprefix": "prompts.prompt_basic.PromptExternal.EMPTY",
+        "prompt_prefix": "prompts.prompt_basic.PromptExternal.EMPTY",
+        "prompt_suffix": "prompts.prompt_basic.PromptExternal.SUFFIXBASIC",
+        "prompt_retrieveprefix": "prompts.prompt_basic.PromptExternal.RETRIEVEPREFIXBASIC",
+        "prompt_retrievesuffix": "prompts.prompt_basic.PromptExternal.RETRIEVESUFFIXBASIC"
+    },
+    "retriever_config": {
+        "retriever": [
+            {
+                "name": "Expert Knowledge",
+                "description": "about knowledge of the expert",
+                "knowledgebase": "knowledge/local_knowledgebase.tsv",
+                "index": "knowledge/local_index.index",
+                "index_type": "hnsw"
+            }
+        ],
+	"encoder": "intfloat/multilingual-e5-base",
+	"npassage": 5
+    },
+    "loader_config": {
+        "ext_types": {
+            ".pdf": "langchain.document_loaders.PyMuPDFLoader",
+            ".csv": "langchain.document_loaders.CSVLoader",
+            ".txt": "langchain.document_loaders.TextLoader",
+            ".doc": "langchain.document_loaders.UnstructuredWordDocumentLoader",
+            ".docx": "langchain.document_loaders.UnstructuredWordDocumentLoader",
+            ".ppt": "langchain.document_loaders.UnstructuredPowerPointLoader",
+            ".pptx": "langchain.document_loaders.UnstructuredPowerPointLoader",
+            ".html": "langchain.document_loaders.UnstructuredHTMLLoader",
+            ".md": "langchain.document_loaders.UnstructuredMarkdownLoader"
+        }
+    }
+}

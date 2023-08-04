@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Ng"
+  given-names: "Youyang"
+- family-names: "Miyashita"
+  given-names: "Daisuke"
+- family-names: "Hoshi"
+  given-names: "Yasuto"
+- family-names: "Morioka"
+  given-names: "Yasuhiro"
+- family-names: "Torii"
+  given-names: "Osamu"
+- family-names: "Kodama"
+  given-names: "Tomoya"
+- family-names: "Deguchi"
+  given-names: "Jun"
+title: "SimplyRetrieve: A Private and Lightweight Retrieval-Centric Generative AI Tool"
+date-released: 2023-07-28
+url: "https://github.com/RCGAI/SimplyRetrieve"
