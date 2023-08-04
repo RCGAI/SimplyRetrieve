@@ -57,11 +57,12 @@ Generated texts from this tool may exhibit variations, even when only slightly m
 ## Citation
 If you find our work useful, please cite us as follow:
 ```
-@software{simplyretrieve2023,
+@software{Ng_SimplyRetrieve_A_Private_2023,
+author = {Ng, Youyang and Miyashita, Daisuke and Hoshi, Yasuto and Morioka, Yasuhiro and Torii, Osamu and Kodama, Tomoya and Deguchi, Jun},
+month = jul,
 title = {{SimplyRetrieve: A Private and Lightweight Retrieval-Centric Generative AI Tool}},
-author = {Youyang Ng, Daisuke Miyashita, Yasuto Hoshi, Yasuhiro Morioka, Osamu Torii, Tomoya Kodama, Jun Deguchi},
-year = {2023},
-url = {https://github.com/RCGAI/SimplyRetrieve}
+url = {https://github.com/RCGAI/SimplyRetrieve},
+year = {2023}
 }
 ```
 Affiliation: Kioxia Corporation, Japan
