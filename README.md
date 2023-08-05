@@ -9,7 +9,7 @@ This repository provides an implementation of *SimplyRetrieve*. SimplyRetrieve i
 - GUI and API based Retrieval-Centric Generation platform
 - Retrieval Tuning Module with Prompts Engineering, Tool Configuration and Retrieval Analysis
 - Private Knowledge Base Constructor
-- Fully localized, private and lightweight access to various sizes of Large Language Models (LLMs) within the retrieval-centric architecture
+- Fully localized, private and lightweight access to various sizes of Large Language Models (LLMs) within the RCG architecture
 - Multi-user concurrent access to UI, utilizing Gradio's queue function
 
 A technical report about this tool will be made available soon at arXiv.
@@ -25,7 +25,7 @@ This tool is constructed based mainly on the awesome and familiar libraries of [
 
 - Examining the effectiveness of retrieval-centric generation in developing safer, more interpretable, and responsible AI systems
 - Optimizing the efficiency of separating context interpretation and knowledge memorization within retrieval-centric generation architecture
-- Improving prompt engineering techniques for Retrieval-Centric Generation
+- Improving prompt engineering techniques for retrieval-centric generation
 - Implementing Chat AI for fully local and edge computing
 - Creating personalized AI assistants tailored to individual users
 
