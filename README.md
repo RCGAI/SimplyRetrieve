@@ -26,7 +26,7 @@ This tool is constructed based mainly on the awesome and familiar libraries of [
 - Examining the effectiveness of retrieval-centric generation in developing safer, more interpretable, and responsible AI systems
 - Optimizing the efficiency of separating context interpretation and knowledge memorization within retrieval-centric generation architecture
 - Improving prompt engineering techniques for Retrieval-Centric Generation
-- Implementing Chat AI for edge computing and fully local implementations
+- Implementing Chat AI for fully local and edge computing
 - Creating personalized AI assistants tailored to individual users
 
 ## What are the prerequisites to run this tool?
