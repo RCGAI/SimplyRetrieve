@@ -5,7 +5,7 @@
 
 ![Tool Overall](docs/fig_overall.png)
 
-This repository provides an implementation of *SimplyRetrieve*. SimplyRetrieve is an open-source tool with the goal of providing a fully localized, lightweight and user-friendly GUI and API for Retrieval-Centric Generation (RCG) architecture to the machine learning community. Some features are:
+This repository provides an implementation of *SimplyRetrieve*. SimplyRetrieve is an open-source tool with the goal of providing a fully localized, lightweight and user-friendly GUI and API for *Retrieval-Centric Generation* (RCG) architecture to the machine learning community. Some features are:
 - GUI and API based Retrieval-Centric Generation platform
 - Retrieval Tuning Module with Prompts Engineering, Tool Configuration and Retrieval Analysis
 - Private Knowledge Base Constructor
