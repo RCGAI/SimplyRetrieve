@@ -17,14 +17,14 @@ A technical report about this tool will be made available soon at arXiv.
 A short video about this tool is available at https://youtu.be/2N3NAi0N1TY
 
 ## Why this tool?
-We aim to contribute to the development of safe, interpretable, and responsible LLMs by sharing our open-source tool for implementing RCG architectures. We hope this tool enables machine learning community to explore the use of LLMs in a more efficient way, while maintaining privacy and local implementation. Retrieval-Centric Generation, which builds upon the Retrieval-Augmented Generation (RAG) concept by emphasizing the crucial role of the LLMs in context interpretation and entrusting knowledge memorization to the retriever component, has the potential to produce more efficient and interpretable generation, and reduce the scale of LLMs required for generative tasks. This tool can be run on a single Nvidia GPU, such as the A100, making it accessible to a wide range of users.
+We aim to contribute to the development of safe, interpretable, and responsible LLMs by sharing our open-source tool for implementing RCG architecture. We hope this tool enables machine learning community to explore the use of LLMs in a more efficient way, while maintaining privacy and local implementation. Retrieval-Centric Generation, which builds upon the Retrieval-Augmented Generation (RAG) concept by emphasizing the crucial role of the LLMs in context interpretation and entrusting knowledge memorization to the retriever component, has the potential to produce more efficient and interpretable generation, and reduce the scale of LLMs required for generative tasks. This tool can be run on a single Nvidia GPU, such as the A100, making it accessible to a wide range of users.
 
 This tool is constructed based mainly on the awesome and familiar libraries of [Huggingface](https://huggingface.co/), [Gradio](https://gradio.app/), [PyTorch](https://pytorch.org/). The default LLM configured in this tool is the instruction-fine-tuned [Wizard-Vicuna-13B-Uncensored](https://huggingface.co/ehartford/Wizard-Vicuna-13B-Uncensored). The default embedding model for retriever is [multilingual-e5-base](https://huggingface.co/intfloat/multilingual-e5-base). We found these models work well in this system, as well as many other various sizes of open-source LLMs and retrievers available in Huggingface. This tool can be run in other languages as well apart from English, by selecting appropriate LLMs and customizing prompt templates according to the target language.
 
 ## What potential developments that can be explored using this tool?
 
 - Examining the effectiveness of retrieval-centric generation in developing safer, more interpretable, and responsible AI systems
-- Optimizing the efficiency of separating context interpretation and knowledge memorization within retrieval-centric generation architectures
+- Optimizing the efficiency of separating context interpretation and knowledge memorization within retrieval-centric generation architecture
 - Improving prompt engineering techniques for Retrieval-Centric Generation
 - Implementing Chat AI for edge computing and fully local implementations
 - Creating personalized AI assistants tailored to individual users
