@@ -5,8 +5,8 @@
 
 ![Tool Overall](docs/fig_overall.png)
 
-This repository provides an implementation of SimplyRetrieve: A Private and Lightweight Retrieval-Centric Generative AI Tool. SimplyRetrieve is an open-source tool with the goal of providing a fully localized, lightweight and user-friendly GUI and API access of Retrieval-Centric Generative (RCG) AI architecture to the machine learning community. Some features are:
-- GUI and API based Retrieval-Centric Generative AI architecture
+This repository provides an implementation of *SimplyRetrieve*. SimplyRetrieve is an open-source tool with the goal of providing a fully localized, lightweight and user-friendly GUI and API for Retrieval-Centric Generation (RCG) architecture to the machine learning community. Some features are:
+- GUI and API based Retrieval-Centric Generation platform
 - Private Knowledge Base Constructor
 - Retrieval Tuning Module with Prompts Engineering, Tool Configuration and Retrieval Analysis
 - Fully localized, private and lightweight access to various sizes of Large Language Models (LLMs) within the retrieval-centric architecture
@@ -19,13 +19,13 @@ A technical report about this tool will be made available soon at arXiv.
 A short video about this tool is available at https://youtu.be/2N3NAi0N1TY
 
 ## Why this tool?
-We aim to contribute to the development of safe, interpretable, and responsible LLMs by sharing our open-source tool for implementing Retrieval-Centric Generative AI architectures. We hope this tool enables machine learning and generative AI community to explore the use of LLMs in a more efficient manner, while maintaining privacy and local implementation. By emphasizing the crucial role of the LLMs in context interpretation and entrusting knowledge memorization to the retriever, this approach has the potential to produce more efficient and interpretable generation, and reduce the scale of LLMs required for generative tasks. This tool can be run on a single Nvidia GPU, such as the A100, making it accessible to a wide range of users.
+We aim to contribute to the development of safe, interpretable, and responsible LLMs by sharing our open-source tool for implementing RCG architectures. We hope this tool enables machine learning community to explore the use of LLMs in a more efficient way, while maintaining privacy and local implementation. By emphasizing the crucial role of the LLMs in context interpretation and entrusting knowledge memorization to the retriever, this approach has the potential to produce more efficient and interpretable generation, and reduce the scale of LLMs required for generative tasks. This tool can be run on a single Nvidia GPU, such as the A100, making it accessible to a wide range of users.
 
 ## What potential developments that can be explored using this tool?
 
-- Examining the effectiveness of retrieval-centric architectures in developing safer, more interpretable, and responsible AI systems
-- Optimizing the efficiency of separating context interpretation and knowledge memorization within retrieval-centric architectures
-- Improving prompt engineering techniques for Retrieval-Centric Generative AI
+- Examining the effectiveness of retrieval-centric generation in developing safer, more interpretable, and responsible AI systems
+- Optimizing the efficiency of separating context interpretation and knowledge memorization within retrieval-centric generation architectures
+- Improving prompt engineering techniques for Retrieval-Centric Generation
 - Implementing Chat AI for edge computing and fully local implementations
 - Creating personalized AI assistants tailored to individual users
 
