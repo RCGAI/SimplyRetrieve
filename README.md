@@ -1,6 +1,7 @@
 # SimplyRetrieve: A Private and Lightweight Retrieval-Centric Generative AI Tool
 [![DOI](https://zenodo.org/badge/670095284.svg)](https://zenodo.org/badge/latestdoi/670095284)
 ![GitHub](https://img.shields.io/github/license/RCGAI/SimplyRetrieve)
+![GitHub release (with filter)](https://img.shields.io/github/v/release/RCGAI/SimplyRetrieve)
 
 ## What is SimplyRetrieve?
 
