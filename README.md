@@ -5,7 +5,7 @@
 
 ## What is SimplyRetrieve?
 
-*SimplyRetrieve* is an open-source tool with the goal of providing a fully localized, lightweight and user-friendly GUI and API for *Retrieval-Centric Generation* (RCG) architecture to the machine learning community. Some features are:
+*SimplyRetrieve* is an open-source tool with the goal of providing a fully localized, lightweight and user-friendly GUI and API for *Retrieval-Centric Generation* (RCG) approach to the machine learning community. Some features are:
 - GUI and API based Retrieval-Centric Generation platform
 - Retrieval Tuning Module with Prompts Engineering, Tool Configuration and Retrieval Analysis
 - Private Knowledge Base Constructor
@@ -19,14 +19,14 @@ A short video about this tool is available at https://youtu.be/2N3NAi0N1TY
 ![Tool Overall](docs/fig_overall.png)
 
 ## Why this tool?
-We aim to contribute to the development of safe, interpretable, and responsible LLMs by sharing our open-source tool for implementing RCG architecture. We hope this tool enables machine learning community to explore the use of LLMs in a more efficient way, while maintaining privacy and local implementation. Retrieval-Centric Generation, which builds upon the Retrieval-Augmented Generation (RAG) concept by emphasizing the crucial role of the LLMs in context interpretation and entrusting knowledge memorization to the retriever component, has the potential to produce more efficient and interpretable generation, and reduce the scale of LLMs required for generative tasks. This tool can be run on a single Nvidia GPU, such as the A100, making it accessible to a wide range of users.
+We aim to contribute to the development of safe, interpretable, and responsible LLMs by sharing our open-source tool for implementing RCG approach. We hope this tool enables machine learning community to explore the use of LLMs in a more efficient way, while maintaining privacy and local implementation. Retrieval-Centric Generation, which builds upon the Retrieval-Augmented Generation (RAG) concept by emphasizing the crucial role of the LLMs in context interpretation and entrusting knowledge memorization to the retriever component, has the potential to produce more efficient and interpretable generation, and reduce the scale of LLMs required for generative tasks. This tool can be run on a single Nvidia GPU, such as the A100, making it accessible to a wide range of users.
 
 This tool is constructed based mainly on the awesome and familiar libraries of [Huggingface](https://huggingface.co/), [Gradio](https://gradio.app/), [PyTorch](https://pytorch.org/). The default LLM configured in this tool is the instruction-fine-tuned [Wizard-Vicuna-13B-Uncensored](https://huggingface.co/ehartford/Wizard-Vicuna-13B-Uncensored). The default embedding model for retriever is [multilingual-e5-base](https://huggingface.co/intfloat/multilingual-e5-base). We found these models work well in this system, as well as many other various sizes of open-source LLMs and retrievers available in Huggingface. This tool can be run in other languages as well apart from English, by selecting appropriate LLMs and customizing prompt templates according to the target language.
 
 ## What potential developments that can be explored using this tool?
 
 - Examining the effectiveness of retrieval-centric generation in developing safer, more interpretable, and responsible AI systems
-- Optimizing the efficiency of separating context interpretation and knowledge memorization within retrieval-centric generation architecture
+- Optimizing the efficiency of separating context interpretation and knowledge memorization within retrieval-centric generation approach
 - Improving prompt engineering techniques for retrieval-centric generation
 - Implementing Chat AI for fully local and edge computing
 - Creating personalized AI assistants tailored to individual users
@@ -55,7 +55,7 @@ Then, access the web-based GUI from your favorite browser by navigating to `http
 Feel free to give us any feedback and comment. We welcome any discussion about this tool.
 
 ## Limitation
-It is important to note that this tool does not provide a foolproof solution for ensuring a completely safe and responsible response from generative AI models, even within a retrieval-centric architecture. The development of safer, interpretable, and responsible AI systems remains an active area of research and ongoing effort.
+It is important to note that this tool does not provide a foolproof solution for ensuring a completely safe and responsible response from generative AI models, even within a retrieval-centric approach. The development of safer, interpretable, and responsible AI systems remains an active area of research and ongoing effort.
 
 Generated texts from this tool may exhibit variations, even when only slightly modifying prompts or queries, due to the next token prediction behavior of current-generation LLMs. This means users may need to carefully fine-tune both the prompts and queries to obtain optimal responses.
 
