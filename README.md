@@ -52,7 +52,7 @@ Then, access the web-based GUI from your favorite browser by navigating to `http
 
 ![Platform GUIsample](docs/gui_english.png)
 
-Feel free to give us any feedback and comment. We welcome any discussion about this tool.
+Feel free to give us any feedback and comment. We welcome any discussion and contribution about this tool.
 
 ## Limitation
 It is important to note that this tool does not provide a foolproof solution for ensuring a completely safe and responsible response from generative AI models, even within a retrieval-centric approach. The development of safer, interpretable, and responsible AI systems remains an active area of research and ongoing effort.
