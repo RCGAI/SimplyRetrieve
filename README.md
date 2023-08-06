@@ -9,7 +9,7 @@
 - GUI and API based Retrieval-Centric Generation platform
 - Retrieval Tuning Module with Prompts Engineering, Tool Configuration and Retrieval Analysis
 - Private Knowledge Base Constructor
-- Fully localized, private and lightweight access to various sizes of Large Language Models (LLMs)
+- Fully localized, private and lightweight access to various sizes of open-source Large Language Models (LLMs)
 - Multi-user concurrent access to UI, utilizing Gradio's queue function
 
 A technical report about this tool will be made available soon at arXiv.
