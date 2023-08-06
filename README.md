@@ -5,8 +5,6 @@
 
 ## What is SimplyRetrieve?
 
-![Tool Overall](docs/fig_overall.png)
-
 *SimplyRetrieve* is an open-source tool with the goal of providing a fully localized, lightweight and user-friendly GUI and API for *Retrieval-Centric Generation* (RCG) architecture to the machine learning community. Some features are:
 - GUI and API based Retrieval-Centric Generation platform
 - Retrieval Tuning Module with Prompts Engineering, Tool Configuration and Retrieval Analysis
@@ -17,6 +15,8 @@
 A technical report about this tool will be made available soon at arXiv.
 
 A short video about this tool is available at https://youtu.be/2N3NAi0N1TY
+
+![Tool Overall](docs/fig_overall.png)
 
 ## Why this tool?
 We aim to contribute to the development of safe, interpretable, and responsible LLMs by sharing our open-source tool for implementing RCG architecture. We hope this tool enables machine learning community to explore the use of LLMs in a more efficient way, while maintaining privacy and local implementation. Retrieval-Centric Generation, which builds upon the Retrieval-Augmented Generation (RAG) concept by emphasizing the crucial role of the LLMs in context interpretation and entrusting knowledge memorization to the retriever component, has the potential to produce more efficient and interpretable generation, and reduce the scale of LLMs required for generative tasks. This tool can be run on a single Nvidia GPU, such as the A100, making it accessible to a wide range of users.
