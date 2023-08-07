@@ -5,7 +5,9 @@
 
 ## What is SimplyRetrieve?
 
-*SimplyRetrieve* is an open-source tool with the goal of providing a fully localized, lightweight and user-friendly GUI and API platform for *Retrieval-Centric Generation* (RCG) approach to the machine learning community. Create chat tool with your documents, highly customizable. Features are:
+*SimplyRetrieve* is an open-source tool with the goal of providing a fully localized, lightweight and user-friendly GUI and API platform for *Retrieval-Centric Generation* (RCG) approach to the machine learning community.
+
+Create chat tool with your documents, highly customizable. Features are:
 - GUI and API based Retrieval-Centric Generation platform
 - Retrieval Tuning Module with Prompts Engineering, Tool Configuration and Retrieval Analysis
 - Private Knowledge Base Constructor
