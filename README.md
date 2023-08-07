@@ -40,7 +40,7 @@ This tool is constructed based mainly on the awesome and familiar libraries of [
       ```
       CUDA_VISIBLE_DEVICES=0 python prepare.py --input data/ --output knowledge/ --config configs/default_release.json
       ```
-    - Supported document formats are `pdf, txt, doc, docx, ppt, pptx, html, md, csv`, and can be easily expanded by editing configuration file
+    - Supported document formats are `pdf, txt, doc, docx, ppt, pptx, html, md, csv`, and can be easily expanded by editing configuration file. Follow the tips on [this issue](https://github.com/nltk/nltk/issues/1787) if NLTK related error occurred.
 
 ## How to run this tool?
 After setting up the prerequisites above, set the current path to `chat` directory (`cd chat/`), execute the command below. Then grab a coffee! as it will just take a few minutes to load.
