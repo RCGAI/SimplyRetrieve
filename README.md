@@ -38,7 +38,7 @@ This tool is constructed based mainly on the awesome and familiar libraries of [
 - If you would like to use your own data as a knowledge source, you can follow these steps. However, if you prefer to start with a simpler example, you can skip these steps and use the default simple sample knowledge source provided by the tool. Note that the sample knowledge source is intended only for demonstration purposes and should not be used for performance evaluations. To achieve accurate results, it is recommended to use your own knowledge source or the Wikipedia source for general usage.
     - Prepare knowledge source for retrieval: Put related documents(pdf etc.) into `chat/data/` directory and run the data preparation script (`cd chat/` then the following command) 
       ```
-      CUDA_VISIBLE_DEVICES=0 python prepare.py --input data/ --output knowledge/ --config configs/default_chat1.json
+      CUDA_VISIBLE_DEVICES=0 python prepare.py --input data/ --output knowledge/ --config configs/default_release.json
       ```
     - Supported document formats are `pdf, txt, doc, docx, ppt, pptx, html, md, csv`, and can be easily expanded by editing configuration file
 
