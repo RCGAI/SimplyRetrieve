@@ -1,3 +1,4 @@
+absl-py==1.4.0
 accelerate==0.21.0
 aiofiles==23.1.0
 aiohttp==3.8.5
@@ -18,6 +19,7 @@ dataclasses-json==0.5.7
 datasets==2.13.1
 dill==0.3.6
 einops==0.6.1
+evaluate==0.4.0
 exceptiongroup==1.1.1
 faiss-cpu==1.7.4
 fastapi==0.95.2
@@ -100,6 +102,8 @@ pytz==2023.3
 PyYAML==6.0
 regex==2023.5.5
 requests==2.31.0
+responses==0.18.0
+rouge-score==0.1.2
 safetensors==0.3.1
 scikit-learn==1.2.2
 scipy==1.10.1
