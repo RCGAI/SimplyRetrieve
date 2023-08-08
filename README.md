@@ -50,7 +50,7 @@ After setting up the prerequisites above, set the current path to `chat` directo
 ```
 CUDA_VISIBLE_DEVICES=0 python chat.py --config configs/default_release.json
 ```
-Then, access the web-based GUI from your favorite browser by navigating to `http://<LOCAL_SERVER_IP>:7860`. Replace `<LOCAL_SERVER_IP>` with the IP address of your GPU server. And this is it, you are ready to go! Below is a sample chat screenshot of the GUI. It provides a familiar streaming chatbot interface with a comprehensive RCG tuning panel. For `API access`, please refer to the [readme file](examples/README.md) and sample scripts located in the `examples/` directory.
+Then, access the web-based GUI from your favorite browser by navigating to `http://<LOCAL_SERVER_IP>:7860`. Replace `<LOCAL_SERVER_IP>` with the IP address of your GPU server. And this is it, you are ready to go! Below is a sample chat screenshot of the GUI. It provides a familiar streaming chatbot interface with a comprehensive RCG tuning panel. For `API access`, please refer to the [API readme](examples/README.md) and sample scripts located in the `examples/` directory. For `GUI operation manual`, please refer to the [GUI readme](docs/README.md) located in the `docs/` directory.
 
 ![Platform GUIsample](docs/gui_english.png)
 
