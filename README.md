@@ -16,7 +16,7 @@ Create chat tool with your documents and language models, highly customizable. F
 
 A technical report about this tool is available at [arXiv](https://arxiv.org/abs/2308.03983).
 
-A short video about this tool is available at https://youtu.be/2N3NAi0N1TY
+A short video about this tool is available at [YouTube](https://youtu.be/2N3NAi0N1TY).
 
 ![Tool Overall](docs/fig_overall.png)
 
