@@ -14,7 +14,7 @@ Create chat tool with your documents and language models, highly customizable. F
 - Fully localized, private and lightweight access to various sizes of open-source Large Language Models (LLMs)
 - Multi-user concurrent access to UI, utilizing Gradio's queue function
 
-A technical report about this tool will be made available soon at arXiv.
+A technical report about this tool is available at [arXiv](https://arxiv.org/abs/2308.03983).
 
 A short video about this tool is available at https://youtu.be/2N3NAi0N1TY
 
@@ -64,13 +64,13 @@ Generated texts from this tool may exhibit variations, even when only slightly m
 ## Citation
 If you find our work useful, please cite us as follow:
 ```
-@software{Ng_SimplyRetrieve_A_Private_2023,
-author = {Ng, Youyang and Miyashita, Daisuke and Hoshi, Yasuto and Morioka, Yasuhiro and Torii, Osamu and Kodama, Tomoya and Deguchi, Jun},
-doi = {10.5281/zenodo.8213550},
-month = jul,
-title = {{SimplyRetrieve: A Private and Lightweight Retrieval-Centric Generative AI Tool}},
-url = {https://github.com/RCGAI/SimplyRetrieve},
-year = {2023}
+@article{ng2023simplyretrieve,
+      title={SimplyRetrieve: A Private and Lightweight Retrieval-Centric Generative AI Tool}, 
+      author={Youyang Ng and Daisuke Miyashita and Yasuto Hoshi and Yasuhiro Morioka and Osamu Torii and Tomoya Kodama and Jun Deguchi},
+      year={2023},
+      eprint={2308.03983},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
 }
 ```
 Affiliation: Kioxia Corporation, Japan
