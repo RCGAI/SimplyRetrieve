@@ -1,4 +1,6 @@
 ## API Access
+This is the manual for API access to the tool. You will need to run the tool first before accessing it through API. API examples below not only allow query through terminal interface, but also can be use for large-scale experiments and benchmarkings through batched access.
+
 Run the script below for single query API access.
 ```
 python chat_api_access.py --query "Where is Penang?"
