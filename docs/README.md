@@ -18,3 +18,6 @@ Selected items in configs:
 - To use another Dense Retriever, modify the row of `"encoder": "intfloat/multilingual-e5-base",`. It is compatible with many retrievers available on Hugging Face.
 - To limit maximum length of generated response, modify the row of `"max_new_tokens": 512,`.
 - To change the number of passages retrieved from knowledge base, modify the row of `"npassage": 5`.
+
+### Save Configs
+- Under Config Tab, edit the content, then click the save button
