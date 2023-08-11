@@ -12,3 +12,4 @@
 - To use another LLM, modify the row of `"model_type": "ehartford/Wizard-Vicuna-13B-Uncensored",`. It is compatible with many available models on Hugging Face.
 - To use another Dense Retriever, modify the row of `"encoder": "intfloat/multilingual-e5-base",`. It is compatible with many available retrievers on Hugging Face.
 - To limit maximum length of generated response, modify the row of `"max_new_tokens": 512,`.
+- To change the number of passages retrieved from knowledge base, modify the row of `"npassage": 5`.
