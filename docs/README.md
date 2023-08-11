@@ -9,3 +9,4 @@
 ### Update Configs
 - In the text editor box under Config Tab, edit the content, then click the update button.
 - Changing knowledge bases, LLMs etc. can be done through this Tab.
+- To use another LLM, modify the row of `"model_type": "ehartford/Wizard-Vicuna-13B-Uncensored",`. It is compatible with many available models on Hugging Face
