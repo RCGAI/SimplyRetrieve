@@ -1,16 +1,26 @@
-## GUI Operation Manual
+# GUI Operation Manual
+This manual provides simple instructions on operating the GUI of this tool. The manual will be updated accordingly.
 
-### Submit Query
-- In the text box under Chat Tab, type in your query (question for Generative AI tool) and press Enter.
+## Chat Tab
 
-### Update Prompts
-- In the text editor boxes under Prompt Tab, edit the content, then click the update button.
+#### Submit Query
+- In the text box, type in your query (question for Generative AI tool) and press Enter.
 
-### Save Prompts
-- Under Prompt Tab, edit the content, then click the save button.
+#### Enable/Disable Knowledge Base
+- Check or uncheck the *Use Knowledgebase* checkbox.
 
-### Update Configs
-- In the text editor box under Config Tab, edit the content, then click the update button. Note that you can also directly modify the config file `configs/default_release.json` before running the tool. However, update configs through GUI is a convenient way in experimenting with the tool.
+## Prompt Tab
+
+#### Update Prompts
+- In the text boxes, edit the content, then click the update button.
+
+#### Save Prompts
+- In the text boxes, edit the content, then click the save button.
+
+## Config Tab
+
+#### Update Configs
+- In the text box, edit the content, then click the update button. Note that you can also directly modify the config file `configs/default_release.json` before running the tool. However, update configs through GUI is a convenient way in experimenting with the tool.
 - Changing knowledge bases, LLMs etc. can be done through this Tab.
 
 Selected items in configs:
@@ -19,5 +29,5 @@ Selected items in configs:
 - To limit maximum length of generated response, modify the row of `"max_new_tokens": 512,`.
 - To change the number of passages retrieved from knowledge base, modify the row of `"npassage": 5`.
 
-### Save Configs
-- Under Config Tab, edit the content, then click the save button
+#### Save Configs
+- In the text box, edit the content, then click the save button
