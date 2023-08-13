@@ -1,9 +1,9 @@
-# GUI Operation Manual
+# GUI Operation Manual of SimplyRetrieve
 This manual provides simple instructions on operating the GUI of this tool. The manual will be updated accordingly.
 
 ## Chat Tab
 
-#### Submit Query
+#### Ask Question to Get a Response
 - In the text box, type in your query (question for Generative AI tool) and press Enter.
 
 #### Enable/Disable Knowledge Base
