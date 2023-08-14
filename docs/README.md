@@ -40,9 +40,9 @@ This manual provides simple instructions on operating the GUI of this tool. The 
 
 #### Save Configs
 - In the text box, edit the content, then click the `Save Config` button.
-- Config will be saved in the subdirectory of `configs` in separate file. You can change the `Save Path` next to the Save Config button.
+- Config will be saved in the subdirectory of `configs/` in separate file. You can change the `Save Path` next to the Save Config button.
 
 ## Analysis Tab
 - Click the `Load Logs` button to display the query-response history and analytical info.
 - Click the `Save Logs` button to save the query-response history and analytical info.
-- Logs will be saved in the subdirectory of `analysis`. You can change the `Save Log Path` next to the Save Logs button.
+- Logs will be saved in the subdirectory of `analysis/`. You can change the `Save Log Path` next to the Save Logs button.
