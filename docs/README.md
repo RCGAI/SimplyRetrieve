@@ -24,6 +24,7 @@ This manual provides simple instructions on operating the GUI of this tool. The 
 
 #### Save Prompts
 - In the text boxes, edit the content, then click the `Save Prompts` button.
+- Prompts will be saved in the subdirectory of `prompts/` in separate files.
 
 ## Config Tab
 
@@ -38,4 +39,5 @@ This manual provides simple instructions on operating the GUI of this tool. The 
 - To change the number of passages retrieved from knowledge base, modify the row of `"npassage": 5`.
 
 #### Save Configs
-- In the text box, edit the content, then click the `Save Config` button
+- In the text box, edit the content, then click the `Save Config` button.
+- Config will be saved in the subdirectory of `configs` in separate file. You can change the `Save Path` next to the Save Config button.
