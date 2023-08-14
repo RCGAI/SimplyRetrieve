@@ -45,16 +45,18 @@ This tool is constructed based mainly on the awesome and familiar libraries of [
     - Supported document formats are `pdf, txt, doc, docx, ppt, pptx, html, md, csv`, and can be easily expanded by editing configuration file. Follow the tips on [this issue](https://github.com/nltk/nltk/issues/1787) if NLTK related error occurred.
 
 ## How to run this tool?
-After setting up the prerequisites above, set the current path to `chat` directory (`cd chat/`), execute the command below. Then grab a coffee! as it will just take a few minutes to load.
+After setting up the prerequisites above, set the current path to `chat` directory (`cd chat/`), execute the command below. Then `grab a coffee!` as it will just take a few minutes to load.
 
 ```
 CUDA_VISIBLE_DEVICES=0 python chat.py --config configs/default_release.json
 ```
-Then, access the web-based GUI from your favorite browser by navigating to `http://<LOCAL_SERVER_IP>:7860`. Replace `<LOCAL_SERVER_IP>` with the IP address of your GPU server. And this is it, you are ready to go! Below is a sample chat screenshot of the GUI. It provides a familiar streaming chatbot interface with a comprehensive RCG tuning panel. For `API access`, please refer to the [API readme](examples/README.md) and sample scripts located in the `examples/` directory. For `GUI operation manual`, please refer to the [GUI readme](docs/README.md) located in the `docs/` directory.
+Then, access the web-based GUI from your favorite browser by navigating to `http://<LOCAL_SERVER_IP>:7860`. Replace `<LOCAL_SERVER_IP>` with the IP address of your GPU server. And this is it, you are ready to go!
+- For `GUI operation manual`, please refer to the [GUI readme](docs/README.md) located in the `docs/` directory.
+- For `API access manual`, please refer to the [API readme](examples/README.md) and sample scripts located in the `examples/` directory.
+
+Below is a sample chat screenshot of the GUI. It provides a familiar streaming chatbot interface with a comprehensive RCG tuning panel. Feel free to give us any feedback and comment. We welcome any discussion and contribution about this tool.
 
 ![Platform GUIsample](docs/gui_english.png)
-
-Feel free to give us any feedback and comment. We welcome any discussion and contribution about this tool.
 
 ## Limitation
 It is important to note that this tool does not provide a foolproof solution for ensuring a completely safe and responsible response from generative AI models, even within a retrieval-centric approach. The development of safer, interpretable, and responsible AI systems remains an active area of research and ongoing effort.
