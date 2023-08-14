@@ -9,6 +9,14 @@ This manual provides simple instructions on operating the GUI of this tool. The 
 #### Enable/Disable Knowledge Base
 - Check or uncheck the `Use Knowledgebase` checkbox.
 
+#### Enable/Disable Mixture-of Knowledge-Base
+- Under `KnowledgeBase Mode`, select the mode from the pulldown menu.
+- This function will only work when you attach more than 1 Knowledge Base to the tool.
+
+#### Enable/Disable Explicit Prompt-Weighting
+- Check or uncheck the `Prompt-Weighting` checkbox.
+- Adjust the slider to increase or decrease the weight.
+
 ## Prompt Tab
 
 #### Update Prompts
