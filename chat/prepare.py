@@ -83,6 +83,11 @@ def documents_load_config(doc_path, loaders):
     docs.extend(loaders['.'+doc_path.split('.')[-1]](doc_path).load())
     return docs
 
+def documents_load_file(doc_file, loaders):
+    docs = []
+    docs.extend(loaders['.'+doc_file.name.split('.')[-1]](doc_file.name).load())
+    return docs
+
 def documents_split(docs, encoder, chunk_size, chunk_overlap):
     #text_splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
     text_splitter =  TokenTextSplitter(encoding_name=encoder, chunk_size=chunk_size, chunk_overlap=chunk_overlap)
@@ -143,6 +148,50 @@ def index_create(embed_split, method, hnsw_m, nlist, nsegment, nbit):
 def index_save(index_split, path, filename, fileformat):
     savepath = os.path.join(path, filename+fileformat)
     faiss.write_index(index_split, savepath)
+    return
+
+def upload_knowledge(config, path_files, path_knowledge, path_embed, path_index):
+    global cnt_save
+    cnt_save = 0
+    kwargs = json.loads(config)
+    print("configs:", kwargs)
+    initialize_loaders(kwargs)
+    docslist = path_files
+    print("total number of readable documents:", len(docslist))
+    print("readable documents:", docslist)
+
+    print("loading, splitting and saving documents...")
+    cnt_passage = 0
+    cnt_split = 0
+    k_dir = os.path.dirname(path_knowledge)
+    k_basename, k_ext = os.path.splitext(os.path.basename(path_knowledge))
+    for item in tqdm(docslist):
+        docs = documents_load_file(item, kwargs['loader_config']['ext_types'])
+        docs_split = documents_split(docs, args.split_encoder, args.split_chunk_size, args.split_chunk_overlap)
+        documents_save(docs_split, k_dir, k_basename, k_ext, cnt_split)
+        cnt_passage += len(docs)
+        cnt_split += len(docs_split)
+    print("total number of loaded passages:", cnt_passage)
+    print("total number of split passages:", cnt_split)
+
+    print("creating embedding")
+    embed_split = embedding_create(args.embed_encoder, k_dir, k_basename, k_ext)
+    print("total number of embeddings:", len(embed_split))
+    print("saving embedding")
+    e_dir = os.path.dirname(path_embed)
+    e_basename, e_ext = os.path.splitext(os.path.basename(path_embed))
+    embedding_save(embed_split, e_dir, e_basename, e_ext)
+    print("creating index")
+    embed_split = np.array(embed_split)
+    index_split = index_create(embed_split, args.index_method, args.index_hnsw_m, args.index_ivfpq_nlist, args.index_ivfpq_nsegment, args.index_ivfpq_nbit)
+    print("total number of indexes:", index_split.ntotal)
+    print("saving index")
+    i_dir = os.path.dirname(path_index)
+    i_basename, i_ext = os.path.splitext(os.path.basename(path_index))
+    index_save(index_split, i_dir, i_basename, i_ext)
+
+    print("documents preparation completed")
+
     return
 
 def main():

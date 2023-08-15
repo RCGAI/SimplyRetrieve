@@ -13,6 +13,7 @@ from llms.initialize import initialize_llm
 from prompts.initialize import initialize_prompts, save_prompts
 from retrieval.retrieve import embedding_create, index_retrieve
 from retrieval.retrieve import retriever_mokb, retriever_weighting, initialize_retriever
+from prepare import upload_knowledge
 from configs.config import read_config, save_config
 
 # Command Line Arguments Setting
@@ -358,6 +359,15 @@ def main():
                         col_count=(2,"dynamic"),
                         interactive=False, type="array", wrap=False)
 
+        with gr.Tab("Knowledge"):
+            with gr.Row():
+                files_knowledge = gr.File(file_count="multiple")
+            with gr.Row():
+                btn_k_upload = gr.Button("Create Knowledge", visible=args.fullfeature)
+                path_knowledgebase = gr.Textbox(label='KnowledgeBase Path', value="knowledge/new_knowledgebase.tsv", visible=args.fullfeature)
+                path_embed = gr.Textbox(label='Embedding Path', value="knowledge/new_embed.npy", visible=args.fullfeature)
+                path_index = gr.Textbox(label='Index Path', value="knowledge/new_index.index", visible=args.fullfeature)
+
         # Events of Chat AI
         retriever = [chkbox_retriever, drop_retmode, drop_retriever, chkbox_retweight, slider_retweight, chkbox_logging]
         analysis = [anls_query, anls_prompt, anls_res, anls_rkslscore, anls_qkslscore, anls_rktlscore, anls_qktlscore]
@@ -379,6 +389,9 @@ def main():
         # Events of Analysis and Data Logging
         load_log_btn.click(fn=load_logs, inputs=None, outputs=datahistory, api_name="load-logs")
         save_log_btn.click(fn=save_logs, inputs=save_log_path, api_name="save-logs")
+
+        # Events of KnowledgeBase Creation
+        btn_k_upload.click(fn=upload_knowledge, inputs=[config_txt, files_knowledge, path_knowledgebase, path_embed, path_index], api_name="upload-knowledge")
 
     # App Main Settings
     app.queue(max_size=100, api_open=args.api, concurrency_count=args.concurrencycount)
