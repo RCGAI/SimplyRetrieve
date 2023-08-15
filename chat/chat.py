@@ -77,11 +77,6 @@ def update_config(*config):
     print("Update Config Completed")
     return
 
-def update_dropdown(choices):
-    new_choices = []
-    new_choices.extend(choices)
-    return new_choices
-
 # Update KnowledgeBase
 def update_knowledge(config, path_files, k_dir, k_basename, k_disp, k_desc, progress=gr.Progress()):
     global kwargs, retriever_name, knowledge, index, encoder, retriever_mode, embed_mode, drop_retriever
@@ -91,8 +86,7 @@ def update_knowledge(config, path_files, k_dir, k_basename, k_disp, k_desc, prog
     status = upload_knowledge(kwargs, path_files, k_dir, k_basename, progress)
     if args.retriever:
         retriever_name, knowledge, index, encoder, retriever_mode, embed_mode = initialize_retriever(kwargs)
-    print(retriever_name)
-    return status, gr.Dropdown.update(choices=update_dropdown(retriever_name)), json.dumps(config_loaded, indent=4)
+    return status, gr.Dropdown.update(choices=retriever_name), json.dumps(config_loaded, indent=4)
 
 # Load Logs
 def load_logs():
@@ -117,7 +111,7 @@ def main():
             with gr.Row():
                 chkbox_retriever = gr.Checkbox(label="Use KnowledgeBase", value=retriever_chk, visible=args.retriever)
                 drop_retmode = gr.Dropdown(retriever_mode, value=retriever_mode[0], type="index", multiselect=False, visible=args.retriever, label="KnowledgeBase Mode")
-                drop_retriever = gr.Dropdown(update_dropdown(retriever_name), value=retriever_name[0], type="index", multiselect=False, visible=args.retriever, label="KnowledgeBase")
+                drop_retriever = gr.Dropdown(retriever_name, value=retriever_name[0], type="value", multiselect=False, visible=args.retriever, label="KnowledgeBase")
                 with gr.Column():
                     chkbox_retweight = gr.Checkbox(label="Prompt-Weighting", value=0, visible=args.retriever)
                     slider_retweight = gr.Slider(label="KnowledgeBase Weightage", minimum=0, maximum=100, value=100, step=1)
@@ -136,8 +130,8 @@ def main():
                 mode = retriever[1]
                 if mode == None:
                     mode = 0
-                idx = retriever[2]
-                print(idx)
+                #idx = retriever[2]
+                idx = retriever_name.index(retriever[2])
                 if idx == None:
                     idx = 0
                 flag_weight = retriever[3]
@@ -223,7 +217,8 @@ def main():
                 mode = retriever[1]
                 if mode == None:
                     mode = 0
-                idx = retriever[2]
+                #idx = retriever[2]
+                idx = retriever_name.index(retriever[2])
                 if idx == None:
                     idx = 0
                 flag_weight = retriever[3]
