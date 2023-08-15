@@ -151,6 +151,22 @@ def index_save(index_split, path, filename, fileformat):
     faiss.write_index(index_split, savepath)
     return
 
+def insert_knowledge(config, k_dir, k_basename, k_disp, k_desc):
+    config_new = config
+    for item in config_new["retriever_config"]["retriever"]:
+        if item["knowledgebase"] == os.path.join(k_dir, k_basename + ".tsv"):
+            item["name"] = k_disp
+            item["description"] = k_desc
+            return config_new
+    new_knowledge = {"name": k_disp,
+                     "description": k_disp,
+                     "knowledgebase": os.path.join(k_dir, k_basename + ".tsv"),
+                     "index": os.path.join(k_dir, k_basename + ".index"),
+                     "index_type": "hnsw"
+                    }
+    config_new["retriever_config"]["retriever"].append(new_knowledge)
+    return config_new
+
 def upload_knowledge(config, path_files, k_dir, k_basename, progress=gr.Progress()):
     global cnt_save
     if os.path.exists(os.path.join(k_dir, k_basename+args.out_docsext)):
@@ -159,7 +175,7 @@ def upload_knowledge(config, path_files, k_dir, k_basename, progress=gr.Progress
         cnt_save = 0
     progress(0.1, desc="Preparing")
     os.makedirs(k_dir, exist_ok=True)
-    kwargs = json.loads(config)
+    kwargs = config
     print("configs:", kwargs)
     initialize_loaders(kwargs)
     docslist = path_files
