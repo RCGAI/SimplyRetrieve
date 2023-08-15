@@ -364,9 +364,9 @@ def main():
                 files_knowledge = gr.File(file_count="multiple")
             with gr.Row():
                 btn_k_upload = gr.Button("Create Knowledge", visible=args.fullfeature)
-                path_knowledgebase = gr.Textbox(label='KnowledgeBase Path', value="knowledge/new_knowledgebase.tsv", visible=args.fullfeature)
-                path_embed = gr.Textbox(label='Embedding Path', value="knowledge/new_embed.npy", visible=args.fullfeature)
-                path_index = gr.Textbox(label='Index Path', value="knowledge/new_index.index", visible=args.fullfeature)
+                dir_knowledgebase = gr.Textbox(label='KnowledgeBase Directory', value="knowledge/", visible=args.fullfeature)
+                name_knowledgebase = gr.Textbox(label='KnowledgeBase Name', value="knowledge_new", visible=args.fullfeature)
+            progress_k = gr.Textbox(label='Progress', value="Ready", visible=args.fullfeature)
 
         # Events of Chat AI
         retriever = [chkbox_retriever, drop_retmode, drop_retriever, chkbox_retweight, slider_retweight, chkbox_logging]
@@ -391,7 +391,7 @@ def main():
         save_log_btn.click(fn=save_logs, inputs=save_log_path, api_name="save-logs")
 
         # Events of KnowledgeBase Creation
-        btn_k_upload.click(fn=upload_knowledge, inputs=[config_txt, files_knowledge, path_knowledgebase, path_embed, path_index], api_name="upload-knowledge")
+        btn_k_upload.click(fn=upload_knowledge, inputs=[config_txt, files_knowledge, dir_knowledgebase, name_knowledgebase], outputs=progress_k, api_name="upload-knowledge")
 
     # App Main Settings
     app.queue(max_size=100, api_open=args.api, concurrency_count=args.concurrencycount)

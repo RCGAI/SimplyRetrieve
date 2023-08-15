@@ -31,15 +31,15 @@
             {
                 "name": "Expert Knowledge",
                 "description": "about knowledge of the expert",
-                "knowledgebase": "knowledge/local_knowledgebase.tsv",
-                "index": "knowledge/local_index.index",
+                "knowledgebase": "knowledge/knowledge_sample.tsv",
+                "index": "knowledge/knowledge_sample.index",
                 "index_type": "hnsw"
             },
 	    {
                 "name": "Junior Knowledge",
                 "description": "about knowledge of the junior",
-                "knowledgebase": "knowledge/local_knowledgebase_junior.tsv",
-                "index": "knowledge/local_index_junior.index",
+                "knowledgebase": "knowledge/knowledge_junior.tsv",
+                "index": "knowledge/knowledge_junior.index",
                 "index_type": "hnsw"
             }
         ],

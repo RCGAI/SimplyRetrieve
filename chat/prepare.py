@@ -17,6 +17,7 @@ from langchain.document_loaders import PyMuPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter, TokenTextSplitter
 from langchain.embeddings import HuggingFaceEmbeddings
 import faiss
+import gradio as gr
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--config', type=str, default=None)
@@ -150,9 +151,14 @@ def index_save(index_split, path, filename, fileformat):
     faiss.write_index(index_split, savepath)
     return
 
-def upload_knowledge(config, path_files, path_knowledge, path_embed, path_index):
+def upload_knowledge(config, path_files, k_dir, k_basename, progress=gr.Progress()):
     global cnt_save
-    cnt_save = 0
+    if os.path.exists(os.path.join(k_dir, k_basename+args.out_docsext)):
+        cnt_save = 1
+    else:
+        cnt_save = 0
+    progress(0.1, desc="Preparing")
+    os.makedirs(k_dir, exist_ok=True)
     kwargs = json.loads(config)
     print("configs:", kwargs)
     initialize_loaders(kwargs)
@@ -160,39 +166,37 @@ def upload_knowledge(config, path_files, path_knowledge, path_embed, path_index)
     print("total number of readable documents:", len(docslist))
     print("readable documents:", docslist)
 
+    progress(0.3, desc="Loading, Splitting and Saving Documents")
     print("loading, splitting and saving documents...")
     cnt_passage = 0
     cnt_split = 0
-    k_dir = os.path.dirname(path_knowledge)
-    k_basename, k_ext = os.path.splitext(os.path.basename(path_knowledge))
     for item in tqdm(docslist):
         docs = documents_load_file(item, kwargs['loader_config']['ext_types'])
         docs_split = documents_split(docs, args.split_encoder, args.split_chunk_size, args.split_chunk_overlap)
-        documents_save(docs_split, k_dir, k_basename, k_ext, cnt_split)
+        documents_save(docs_split, k_dir, k_basename, args.out_docsext, cnt_split)
         cnt_passage += len(docs)
         cnt_split += len(docs_split)
     print("total number of loaded passages:", cnt_passage)
     print("total number of split passages:", cnt_split)
 
+    progress(0.5, desc="Creating and Saving Embedding")
     print("creating embedding")
-    embed_split = embedding_create(args.embed_encoder, k_dir, k_basename, k_ext)
+    embed_split = embedding_create(args.embed_encoder, k_dir, k_basename, args.out_docsext)
     print("total number of embeddings:", len(embed_split))
     print("saving embedding")
-    e_dir = os.path.dirname(path_embed)
-    e_basename, e_ext = os.path.splitext(os.path.basename(path_embed))
-    embedding_save(embed_split, e_dir, e_basename, e_ext)
+    embedding_save(embed_split, k_dir, k_basename, args.out_embedext)
+
+    progress(0.8, desc="Creating and Saving Index")
     print("creating index")
     embed_split = np.array(embed_split)
     index_split = index_create(embed_split, args.index_method, args.index_hnsw_m, args.index_ivfpq_nlist, args.index_ivfpq_nsegment, args.index_ivfpq_nbit)
     print("total number of indexes:", index_split.ntotal)
     print("saving index")
-    i_dir = os.path.dirname(path_index)
-    i_basename, i_ext = os.path.splitext(os.path.basename(path_index))
-    index_save(index_split, i_dir, i_basename, i_ext)
+    index_save(index_split, k_dir, k_basename, args.out_indexext)
 
     print("documents preparation completed")
 
-    return
+    return "Ready"
 
 def main():
     print(args)
