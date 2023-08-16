@@ -372,6 +372,7 @@ def main():
                         col_count=(2,"dynamic"),
                         interactive=False, type="array", wrap=False)
 
+        # KnowledgeBase Creation Tab
         with gr.Tab("Knowledge"):
             with gr.Row():
                 files_knowledge = gr.File(file_count="multiple")
