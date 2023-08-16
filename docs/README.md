@@ -46,3 +46,9 @@ This manual provides simple instructions on operating the GUI of this tool. The 
 - Click the `Load Logs` button to display the query-response history and analytical info.
 - Click the `Save Logs` button to save the query-response history and analytical info.
 - Logs will be saved in the subdirectory of `analysis/`. You can change the `Save Log Path` next to the Save Logs button.
+
+## Knowledge Tab
+- `Drag and drop` new documents (pdf etc.), then click the `Create Knowledge` button to create knowledge base on-the-fly directly from GUI. Support multiple documents.
+- If same Knowledgebase Filename existed, new knowledge will be automatically appended to that knowledge base.
+- After knowledge base creation, Chat Tab will be automatically updated to include the new knowledge. New knowledge can be selected from the dropdown menu of knowledgebase under Chat Tab. For appended knowledge, current knowledge base used will be automatically updated.
+- To make the newly created knowledge base permanent even after reloading the tool, click the `Save Config` button under Config Tab to save a copy of the automatically updated configs.
