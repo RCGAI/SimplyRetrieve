@@ -197,7 +197,7 @@ def upload_knowledge(config, path_files, k_dir, k_basename, progress=gr.Progress
 
     progress(0.5, desc="Creating and Saving Embedding")
     print("creating embedding")
-    embed_split = embedding_create(args.embed_encoder, k_dir, k_basename, args.out_docsext)
+    embed_split = embedding_create(kwargs['retriever_config']['encoder'], k_dir, k_basename, args.out_docsext)
     print("total number of embeddings:", len(embed_split))
     print("saving embedding")
     embedding_save(embed_split, k_dir, k_basename, args.out_embedext)
