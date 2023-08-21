@@ -17,4 +17,4 @@ def save_config(config, path):
     with open(path, "w", encoding="utf-8") as writer:
         json.dump(json_dict, writer, ensure_ascii=False, indent=4)
     print("Save Config Completed")
-    return
+    return "Save Complete"

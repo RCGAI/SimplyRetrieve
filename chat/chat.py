@@ -64,18 +64,22 @@ def update_prompts(*prompts):
     print("Prompts update completed")
 
 # Update Configs Function
-def update_config(*config):
+def update_config(progress=gr.Progress(), *config):
     global kwargs, main_agent_llm, knowledge, index, encoder
+    progress(0.1, desc="Loading Config")
     kwargs_new = json.loads(config[0])
     kwargs = kwargs_new
+    progress(0.2, desc="Initializing Prompts")
     kwargs = initialize_prompts(kwargs)
     update_prompts(*config[1:])
+    progress(0.3, desc="Initializing LLM")
     main_agent_llm = None
     main_agent_llm, streamer = initialize_llm(**kwargs['llm_config'])
+    progress(0.8, desc="Initializing Knowledge Base")
     if args.retriever:
         retriever_name, knowledge, index, encoder, retriever_mode, embed_mode = initialize_retriever(kwargs)
     print("Update Config Completed")
-    return
+    return "Update Complete"
 
 # Update KnowledgeBase
 def update_knowledge(config, path_files, k_dir, k_basename, k_disp, k_desc, progress=gr.Progress()):
@@ -344,6 +348,7 @@ def main():
                 name, ext = os.path.splitext(args.config)
                 save_path_default = name + "_new" + ext
                 save_path = gr.Textbox(label='Save Path', value=save_path_default, visible=args.fullfeature)
+            progress_c = gr.Textbox(label='Progress', value="Ready", visible=args.fullfeature)
 
         # Analysis and Data-Logging Tab
         with gr.Tab("Analysis"):
@@ -400,8 +405,8 @@ def main():
         # Events of Configurations
         config_current = [config_txt]
         config_current.extend(prompts)
-        update_config_btn.click(fn=update_config, inputs=config_current, api_name="update-config")
-        save_config_btn.click(fn=save_config, inputs=[config_txt, save_path], api_name="save-config")
+        update_config_btn.click(fn=update_config, inputs=config_current, outputs=progress_c, api_name="update-config")
+        save_config_btn.click(fn=save_config, inputs=[config_txt, save_path], outputs=progress_c, api_name="save-config")
 
         # Events of Analysis and Data Logging
         load_log_btn.click(fn=load_logs, inputs=None, outputs=datahistory, api_name="load-logs")
