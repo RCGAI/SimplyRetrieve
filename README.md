@@ -3,6 +3,8 @@
 ![GitHub](https://img.shields.io/github/license/RCGAI/SimplyRetrieve)
 ![GitHub release (with filter)](https://img.shields.io/github/v/release/RCGAI/SimplyRetrieve)
 
+Latest: Users can now create and append knowledge on-the-fly through the newly added `Knowledge Tab` in the GUI.
+
 ## What is SimplyRetrieve?
 
 *SimplyRetrieve* is an open-source tool with the goal of providing a fully localized, lightweight and user-friendly GUI and API platform for *Retrieval-Centric Generation* (RCG) approach to the machine learning community.
@@ -37,12 +39,13 @@ This tool is constructed based mainly on the awesome and familiar libraries of [
 - Git clone this repository.
 - In GPU-based Linux machine, activate your favourite python venv, install the necessary packages
     - `pip install -r requirements.txt`
-- If you would like to use your own data as a knowledge source, you can follow these steps. However, if you prefer to start with a simpler example, you can skip these steps and use the default simple sample knowledge source provided by the tool. Note that the sample knowledge source is intended only for demonstration purposes and should not be used for performance evaluations. To achieve accurate results, it is recommended to use your own knowledge source or the Wikipedia source for general usage.
+- Optional: If you would like to use your own data as a knowledge source, you can follow these steps. However, if you prefer to start with a simpler example, you can skip these steps and use the default simple sample knowledge source provided by the tool. Note that the sample knowledge source is intended only for demonstration purposes and should not be used for performance evaluations. To achieve accurate results, it is recommended to use your own knowledge source or the Wikipedia source for general usage.
     - Prepare knowledge source for retrieval: Put related documents(pdf etc.) into `chat/data/` directory and run the data preparation script (`cd chat/` then the following command) 
       ```
       CUDA_VISIBLE_DEVICES=0 python prepare.py --input data/ --output knowledge/ --config configs/default_release.json
       ```
     - Supported document formats are `pdf, txt, doc, docx, ppt, pptx, html, md, csv`, and can be easily expanded by editing configuration file. Follow the tips on [this issue](https://github.com/nltk/nltk/issues/1787) if NLTK related error occurred.
+    - **Latest: Knowledge Base creation feature is now available through the `Knowledge Tab` of the GUI tool. Users can now add knowledge on-the-fly. Running the above prepare.py script prior to running the tool is not a necessity.** 
 
 ## How to run this tool?
 After setting up the prerequisites above, set the current path to `chat` directory (`cd chat/`), execute the command below. Then `grab a coffee!` as it will just take a few minutes to load.

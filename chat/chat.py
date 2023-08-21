@@ -13,6 +13,7 @@ from llms.initialize import initialize_llm
 from prompts.initialize import initialize_prompts, save_prompts
 from retrieval.retrieve import embedding_create, index_retrieve
 from retrieval.retrieve import retriever_mokb, retriever_weighting, initialize_retriever
+from prepare import upload_knowledge, insert_knowledge
 from configs.config import read_config, save_config
 
 # Command Line Arguments Setting
@@ -76,6 +77,17 @@ def update_config(*config):
     print("Update Config Completed")
     return
 
+# Update KnowledgeBase
+def update_knowledge(config, path_files, k_dir, k_basename, k_disp, k_desc, progress=gr.Progress()):
+    global kwargs, retriever_name, knowledge, index, encoder, retriever_mode, embed_mode, drop_retriever
+    config_loaded = json.loads(config)
+    config_loaded = insert_knowledge(config_loaded, k_dir, k_basename, k_disp, k_desc)
+    kwargs["retriever_config"]["retriever"] = config_loaded["retriever_config"]["retriever"]
+    status = upload_knowledge(kwargs, path_files, k_dir, k_basename, progress)
+    if args.retriever:
+        retriever_name, knowledge, index, encoder, retriever_mode, embed_mode = initialize_retriever(kwargs)
+    return status, gr.Dropdown.update(choices=retriever_name), json.dumps(config_loaded, indent=4)
+
 # Load Logs
 def load_logs():
     return df
@@ -99,7 +111,7 @@ def main():
             with gr.Row():
                 chkbox_retriever = gr.Checkbox(label="Use KnowledgeBase", value=retriever_chk, visible=args.retriever)
                 drop_retmode = gr.Dropdown(retriever_mode, value=retriever_mode[0], type="index", multiselect=False, visible=args.retriever, label="KnowledgeBase Mode")
-                drop_retriever = gr.Dropdown(retriever_name, value=retriever_name[0], type="index", multiselect=False, visible=args.retriever, label="KnowledgeBase")
+                drop_retriever = gr.Dropdown(retriever_name, value=retriever_name[0], type="value", multiselect=False, visible=args.retriever, label="KnowledgeBase")
                 with gr.Column():
                     chkbox_retweight = gr.Checkbox(label="Prompt-Weighting", value=0, visible=args.retriever)
                     slider_retweight = gr.Slider(label="KnowledgeBase Weightage", minimum=0, maximum=100, value=100, step=1)
@@ -118,7 +130,8 @@ def main():
                 mode = retriever[1]
                 if mode == None:
                     mode = 0
-                idx = retriever[2]
+                #idx = retriever[2]
+                idx = retriever_name.index(retriever[2])
                 if idx == None:
                     idx = 0
                 flag_weight = retriever[3]
@@ -204,7 +217,8 @@ def main():
                 mode = retriever[1]
                 if mode == None:
                     mode = 0
-                idx = retriever[2]
+                #idx = retriever[2]
+                idx = retriever_name.index(retriever[2])
                 if idx == None:
                     idx = 0
                 flag_weight = retriever[3]
@@ -358,6 +372,19 @@ def main():
                         col_count=(2,"dynamic"),
                         interactive=False, type="array", wrap=False)
 
+        # KnowledgeBase Creation Tab
+        with gr.Tab("Knowledge"):
+            with gr.Row():
+                files_knowledge = gr.File(file_count="multiple")
+            gr.Markdown("If *KnowledgeBase Filename* existed, Knowledge will be inserted in Append Mode.")
+            with gr.Row():
+                dir_knowledgebase = gr.Textbox(label='KnowledgeBase Directory', value="knowledge/", visible=args.fullfeature)
+                name_knowledgebase = gr.Textbox(label='KnowledgeBase Filename', value="knowledge_new", visible=args.fullfeature)
+                disp_knowledgebase = gr.Textbox(label='KnowledgeBase Display Name', value="knowledge New", visible=args.fullfeature)
+                desc_knowledgebase = gr.Textbox(label='KnowledgeBase Description', value="My personal knowledge", visible=args.fullfeature)
+            btn_k_upload = gr.Button("Create Knowledge", visible=args.fullfeature)
+            progress_k = gr.Textbox(label='Progress', value="Ready", visible=args.fullfeature)
+
         # Events of Chat AI
         retriever = [chkbox_retriever, drop_retmode, drop_retriever, chkbox_retweight, slider_retweight, chkbox_logging]
         analysis = [anls_query, anls_prompt, anls_res, anls_rkslscore, anls_qkslscore, anls_rktlscore, anls_qktlscore]
@@ -379,6 +406,11 @@ def main():
         # Events of Analysis and Data Logging
         load_log_btn.click(fn=load_logs, inputs=None, outputs=datahistory, api_name="load-logs")
         save_log_btn.click(fn=save_logs, inputs=save_log_path, api_name="save-logs")
+
+        # Events of KnowledgeBase Creation
+        btn_k_upload.click(fn=update_knowledge, inputs=[config_txt, files_knowledge, dir_knowledgebase,
+            name_knowledgebase, disp_knowledgebase, desc_knowledgebase],
+            outputs=[progress_k, drop_retriever, config_txt], api_name="upload-knowledge")
 
     # App Main Settings
     app.queue(max_size=100, api_open=args.api, concurrency_count=args.concurrencycount)
