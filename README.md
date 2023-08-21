@@ -3,7 +3,7 @@
 ![GitHub](https://img.shields.io/github/license/RCGAI/SimplyRetrieve)
 ![GitHub release (with filter)](https://img.shields.io/github/v/release/RCGAI/SimplyRetrieve)
 
-**News**: *Aug 21, 2023* -- Users can now create and append knowledge on-the-fly through the newly added `Knowledge Tab` in the GUI.
+**News**: *Aug 21, 2023* -- Users can now create and append knowledge on-the-fly through the newly added `Knowledge Tab` in the GUI. Also, progress bars added in Config & Knowledge Tabs.
 
 ## What is SimplyRetrieve?
 
