@@ -17,5 +17,6 @@ authors:
   given-names: "Jun"
 title: "SimplyRetrieve: A Private and Lightweight Retrieval-Centric Generative AI Tool"
 date-released: 2023-07-28
+journal: arXiv
 doi: 10.48550/arXiv.2308.03983
 url: "https://arxiv.org/abs/2308.03983"
