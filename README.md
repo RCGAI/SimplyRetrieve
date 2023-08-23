@@ -70,12 +70,13 @@ Generated texts from this tool may exhibit variations, even when only slightly m
 If you find our work useful, please cite us as follow:
 ```
 @article{ng2023simplyretrieve,
-      title={SimplyRetrieve: A Private and Lightweight Retrieval-Centric Generative AI Tool}, 
-      author={Youyang Ng and Daisuke Miyashita and Yasuto Hoshi and Yasuhiro Morioka and Osamu Torii and Tomoya Kodama and Jun Deguchi},
-      year={2023},
-      eprint={2308.03983},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+    title={SimplyRetrieve: A Private and Lightweight Retrieval-Centric Generative AI Tool}, 
+    author={Youyang Ng and Daisuke Miyashita and Yasuto Hoshi and Yasuhiro Morioka and Osamu Torii and Tomoya Kodama and Jun Deguchi},
+    year={2023},
+    eprint={2308.03983},
+    archivePrefix={arXiv},
+    primaryClass={cs.CL},
+    journal={arXiv preprint arXiv:2308.03983}
 }
 ```
 Affiliation: Kioxia Corporation, Japan
