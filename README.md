@@ -57,9 +57,12 @@ Then, access the web-based GUI from your favorite browser by navigating to `http
 - For `GUI operation manual`, please refer to the [GUI readme](docs/README.md) located in the `docs/` directory.
 - For `API access manual`, please refer to the [API readme](examples/README.md) and sample scripts located in the `examples/` directory.
 
-Below is a sample chat screenshot of the GUI. It provides a familiar streaming chatbot interface with a comprehensive RCG tuning panel. Feel free to give us any feedback and comment. We welcome any discussion and contribution about this tool.
+Below is a sample chat screenshot of the GUI. It provides a familiar streaming chatbot interface with a comprehensive RCG tuning panel.
 
 ![Platform GUIsample](docs/gui_english.png)
+
+## Contributing
+Feel free to give us any feedback and comment. We very welcome any discussion and contribution about this tool, including new features, improvements and better documentations. Feel free to open an issue or discussion.
 
 ## Limitation
 It is important to note that this tool does not provide a foolproof solution for ensuring a completely safe and responsible response from generative AI models, even within a retrieval-centric approach. The development of safer, interpretable, and responsible AI systems remains an active area of research and ongoing effort.
