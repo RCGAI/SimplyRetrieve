@@ -169,6 +169,11 @@ def insert_knowledge(config, k_dir, k_basename, k_disp, k_desc):
 
 def upload_knowledge(config, path_files, k_dir, k_basename, progress=gr.Progress()):
     global cnt_save
+    if path_files == None:
+        if os.path.exists(os.path.join(k_dir, k_basename+args.out_docsext)):
+            return "Loaded existing knowledge"
+        else:
+            return "No knowledge to load"
     if os.path.exists(os.path.join(k_dir, k_basename+args.out_docsext)):
         cnt_save = 1
     else:
@@ -212,7 +217,7 @@ def upload_knowledge(config, path_files, k_dir, k_basename, progress=gr.Progress
 
     print("documents preparation completed")
 
-    return "Ready"
+    return "New knowledge loaded"
 
 def main():
     print(args)
