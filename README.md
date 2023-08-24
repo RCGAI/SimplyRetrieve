@@ -3,18 +3,18 @@
 ![GitHub](https://img.shields.io/github/license/RCGAI/SimplyRetrieve)
 ![GitHub release (with filter)](https://img.shields.io/github/v/release/RCGAI/SimplyRetrieve)
 
-**News**: *Aug 21, 2023* -- Users can now create and append knowledge on-the-fly through the newly added `Knowledge Tab` in the GUI. Also, progress bars added in Config & Knowledge Tabs.
+📰**News**: *Aug 21, 2023* -- Users can now create and append knowledge on-the-fly through the newly added `Knowledge Tab` in the GUI. Also, progress bars added in Config & Knowledge Tabs.
 
 ## 🤔 What is SimplyRetrieve?
 
 *SimplyRetrieve* is an open-source tool with the goal of providing a fully localized, lightweight and user-friendly GUI and API platform for *Retrieval-Centric Generation* (RCG) approach to the machine learning community.
 
 Create chat tool with your documents and language models, highly customizable. Features are:
-- GUI and API based Retrieval-Centric Generation platform
-- Retrieval Tuning Module with Prompts Engineering, Tool Configuration and Retrieval Analysis
-- Private Knowledge Base Constructor
-- Fully localized, private and lightweight access to various sizes of open-source Large Language Models (LLMs)
-- Multi-user concurrent access to UI, utilizing Gradio's queue function
+- 📚 GUI and API based Retrieval-Centric Generation platform
+- 🔧 Retrieval Tuning Module with Prompts Engineering, Tool Configuration and Retrieval Analysis
+- 🏡 Private Knowledge Base Constructor
+- 🧠 Fully localized, private and lightweight access to various sizes of open-source Large Language Models (LLMs)
+- 🚥 Multi-user concurrent access to UI, utilizing Gradio's queue function
 
 A technical report about this tool is available at [arXiv](https://arxiv.org/abs/2308.03983). 📖
 
