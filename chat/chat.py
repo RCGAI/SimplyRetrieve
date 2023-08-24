@@ -85,9 +85,10 @@ def update_config(progress=gr.Progress(), *config):
 def update_knowledge(config, path_files, k_dir, k_basename, k_disp, k_desc, progress=gr.Progress()):
     global kwargs, retriever_name, knowledge, index, encoder, retriever_mode, embed_mode, drop_retriever
     config_loaded = json.loads(config)
-    config_loaded = insert_knowledge(config_loaded, k_dir, k_basename, k_disp, k_desc)
-    kwargs["retriever_config"]["retriever"] = config_loaded["retriever_config"]["retriever"]
     status = upload_knowledge(kwargs, path_files, k_dir, k_basename, progress)
+    if status != "No knowledge to load":
+        config_loaded = insert_knowledge(config_loaded, k_dir, k_basename, k_disp, k_desc)
+        kwargs["retriever_config"]["retriever"] = config_loaded["retriever_config"]["retriever"]
     if args.retriever:
         retriever_name, knowledge, index, encoder, retriever_mode, embed_mode = initialize_retriever(kwargs)
     return status, gr.Dropdown.update(choices=retriever_name), json.dumps(config_loaded, indent=4)
