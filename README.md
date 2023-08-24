@@ -82,4 +82,4 @@ If you find our work useful, please cite us as follow:
     journal={arXiv preprint arXiv:2308.03983}
 }
 ```
-🏛️ Affiliation: Kioxia Corporation, Japan
+🏛️ Affiliation: Institute of Memory Technology R&D, Kioxia Corporation, Japan
