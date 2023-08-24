@@ -35,7 +35,7 @@ This tool is constructed based mainly on the awesome and familiar libraries of [
 - Implementing Chat AI for fully local and edge computing
 - Creating personalized AI assistants tailored to individual users
 
-## What are the prerequisites to run this tool?
+## 🔨 What are the prerequisites to run this tool?
 - Git clone this repository.
 - In GPU-based Linux machine, activate your favourite python venv, install the necessary packages
     - `pip install -r requirements.txt`
@@ -47,7 +47,7 @@ This tool is constructed based mainly on the awesome and familiar libraries of [
     - Supported document formats are `pdf, txt, doc, docx, ppt, pptx, html, md, csv`, and can be easily expanded by editing configuration file. Follow the tips on [this issue](https://github.com/nltk/nltk/issues/1787) if NLTK related error occurred.
     - **Latest: Knowledge Base creation feature is now available through the `Knowledge Tab` of the GUI tool. Users can now add knowledge on-the-fly. Running the above prepare.py script prior to running the tool is not a necessity.** 
 
-## How to run this tool?
+## 🏃 How to run this tool?
 After setting up the prerequisites above, set the current path to `chat` directory (`cd chat/`), execute the command below. Then `grab a coffee!` as it will just take a few minutes to load.
 
 ```
@@ -61,15 +61,15 @@ Below is a sample chat screenshot of the GUI. It provides a familiar streaming c
 
 ![Platform GUIsample](docs/gui_english.png)
 
-## Contributing
+## 🤝 Contributing
 Feel free to give us any feedback and comment. We very welcome any discussion and contribution about this tool, including new features, improvements and better documentations. Feel free to open an issue or discussion.
 
-## Limitation
+## 🪧 Limitation
 It is important to note that this tool does not provide a foolproof solution for ensuring a completely safe and responsible response from generative AI models, even within a retrieval-centric approach. The development of safer, interpretable, and responsible AI systems remains an active area of research and ongoing effort.
 
 Generated texts from this tool may exhibit variations, even when only slightly modifying prompts or queries, due to the next token prediction behavior of current-generation LLMs. This means users may need to carefully fine-tune both the prompts and queries to obtain optimal responses.
 
-## Citation
+## 📝 Citation
 If you find our work useful, please cite us as follow:
 ```
 @article{ng2023simplyretrieve,
