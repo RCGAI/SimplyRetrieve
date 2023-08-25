@@ -79,7 +79,7 @@ def update_config(progress=gr.Progress(), *config):
     if args.retriever:
         retriever_name, knowledge, index, encoder, retriever_mode, embed_mode = initialize_retriever(kwargs)
     print("Update Config Completed")
-    return "Update Complete"
+    return "Update Complete", gr.Dropdown.update(choices=retriever_name)
 
 # Update KnowledgeBase
 def update_knowledge(config, path_files, k_dir, k_basename, k_disp, k_desc, progress=gr.Progress()):
@@ -89,7 +89,6 @@ def update_knowledge(config, path_files, k_dir, k_basename, k_disp, k_desc, prog
     if status != "No knowledge to load":
         config_loaded = insert_knowledge(config_loaded, k_dir, k_basename, k_disp, k_desc)
         kwargs["retriever_config"]["retriever"] = config_loaded["retriever_config"]["retriever"]
-    if args.retriever:
         retriever_name, knowledge, index, encoder, retriever_mode, embed_mode = initialize_retriever(kwargs)
     return status, gr.Dropdown.update(choices=retriever_name), json.dumps(config_loaded, indent=4)
 
@@ -406,7 +405,7 @@ def main():
         # Events of Configurations
         config_current = [config_txt]
         config_current.extend(prompts)
-        update_config_btn.click(fn=update_config, inputs=config_current, outputs=progress_c, api_name="update-config")
+        update_config_btn.click(fn=update_config, inputs=config_current, outputs=[progress_c, drop_retriever], api_name="update-config")
         save_config_btn.click(fn=save_config, inputs=[config_txt, save_path], outputs=progress_c, api_name="save-config")
 
         # Events of Analysis and Data Logging
