@@ -64,6 +64,10 @@ Below is a sample chat screenshot of the GUI. It provides a familiar streaming c
 ## 🤝 Contributing
 Feel free to give us any feedback and comment. We very welcome any discussion and contribution about this tool, including new features, improvements and better documentations. Feel free to open an issue or discussion.
 
+## 🛣️ Roadmap
+Future Developments
+- To add Retrieval-Centric Memory (Chat History) component.
+
 ## ⚠️ Limitation
 It is important to note that this tool does not provide a foolproof solution for ensuring a completely safe and responsible response from generative AI models, even within a retrieval-centric approach. The development of safer, interpretable, and responsible AI systems remains an active area of research and ongoing effort.
 
