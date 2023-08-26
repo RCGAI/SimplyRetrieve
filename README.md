@@ -62,7 +62,7 @@ Below is a sample chat screenshot of the GUI. It provides a familiar streaming c
 ![Platform GUIsample](docs/gui_english.png)
 
 ## 🤝 Contributing
-Feel free to give us any feedback and comment. We very welcome any discussion and contribution about this tool, including new features, improvements and better documentations. Feel free to open an issue or discussion.
+Feel free to give us any feedback and comment. We very welcome any discussion and contribution about this tool, including new features, improvements and better documentations. Feel free to open an issue or discussion. We don't have any template for issue or discussion yet so anything will do for now.
 
 ## 🛣️ Roadmap
 Future Developments
