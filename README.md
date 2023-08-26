@@ -67,6 +67,7 @@ Feel free to give us any feedback and comment. We very welcome any discussion an
 ## 🛣️ Roadmap
 Future Developments
 - To add Retrieval-Centric Memory (Chat History) component.
+- To create a comprehensive documentation.
 
 ## ⚠️ Limitation
 It is important to note that this tool does not provide a foolproof solution for ensuring a completely safe and responsible response from generative AI models, even within a retrieval-centric approach. The development of safer, interpretable, and responsible AI systems remains an active area of research and ongoing effort.
