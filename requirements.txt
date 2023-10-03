@@ -131,7 +131,7 @@ typing-inspect==0.9.0
 tzdata==2023.3
 uc-micro-py==1.0.2
 unstructured==0.9.0
-urllib3==2.0.2
+urllib3==2.0.6
 uvicorn==0.22.0
 websockets==11.0.3
 xformers==0.0.20
