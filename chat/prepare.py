@@ -42,7 +42,7 @@ parser.add_argument('--out_indexext', type=str, default='.index')
 parser.add_argument('--index_ivfpq_nlist', type=int, default=256)
 parser.add_argument('--index_ivfpq_nsegment', type=int, default=16)
 parser.add_argument('--index_ivfpq_nbit', type=int, default=8)
-args = parser.parse_args()
+args, unknown = parser.parse_known_args()
 
 os.makedirs(args.output, exist_ok=True)
 
