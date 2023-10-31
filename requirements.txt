@@ -46,8 +46,8 @@ jsonpatch==1.33
 jsonpointer==2.4
 jsonschema==4.17.3
 kiwisolver==1.4.4
-langchain==0.0.317
-langsmith==0.0.43
+langchain==0.0.325
+langsmith==0.0.54
 linkify-it-py==2.0.2
 lit==16.0.5
 lxml==4.9.3
