@@ -66,6 +66,7 @@ Feel free to give us any feedback and comment. We very welcome any discussion an
 
 ## 🛣️ Roadmap
 Future Developments
+- To support vLLM PagedAttention high-throughput inference
 - To add Retrieval-Centric Memory (Chat History) component.
 - To create a comprehensive documentation.
 
