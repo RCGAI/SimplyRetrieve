@@ -61,6 +61,8 @@ Below is a sample chat screenshot of the GUI. It provides a familiar streaming c
 
 ![Platform GUIsample](docs/gui_english.png)
 
+Not having a local GPU server to run this tool at this moment? No problem. [Visit this Repository](https://github.com/yy29/aws-ec2-tips-llm-chat-ai). It shows the instruction to try out this tool in AWS EC2 cloud platform. 
+
 ## 🤝 Contributing
 Feel free to give us any feedback and comment. We very welcome any discussion and contribution about this tool, including new features, improvements and better documentations. Feel free to open an issue or discussion. We don't have any template for issue or discussion yet so anything will do for now.
 
