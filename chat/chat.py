@@ -109,9 +109,9 @@ def main():
         with gr.Tab("Chat"):
             chatbot = gr.Chatbot(elem_id="chatbot")
             with gr.Row():
-                msg = gr.Textbox(show_label=False, placeholder="Enter text and press enter").style(container=False)
-            api_msg = gr.Textbox(show_label=False, placeholder="Enter text and press enter", visible=False).style(container=False)
-            api_msg_llm = gr.Textbox(show_label=False, placeholder="Enter text and press enter", visible=False).style(container=False)
+                msg = gr.Textbox(show_label=False, placeholder="Enter text and press enter", container=False)
+            api_msg = gr.Textbox(show_label=False, placeholder="Enter text and press enter", visible=False, container=False)
+            api_msg_llm = gr.Textbox(show_label=False, placeholder="Enter text and press enter", visible=False, container=False)
             with gr.Row():
                 chkbox_retriever = gr.Checkbox(label="Use KnowledgeBase", value=retriever_chk, visible=args.retriever)
                 drop_retmode = gr.Dropdown(retriever_mode, value=retriever_mode[0], type="index", multiselect=False, visible=args.retriever, label="KnowledgeBase Mode")
@@ -393,8 +393,8 @@ def main():
         # Events of Chat AI
         retriever = [chkbox_retriever, drop_retmode, drop_retriever, chkbox_retweight, slider_retweight, chkbox_logging]
         analysis = [anls_query, anls_prompt, anls_res, anls_rkslscore, anls_qkslscore, anls_rktlscore, anls_qktlscore]
-        msg.submit(user, [msg, chatbot], [msg, chatbot]).then(
-                    bot, [chatbot, *retriever], [chatbot, *analysis])
+        msg.submit(user, [msg, chatbot], [msg, chatbot], concurrency_limit=args.concurrencycount).then(
+                    bot, [chatbot, *retriever], [chatbot, *analysis], concurrency_limit=args.concurrencycount)
         api_msg.submit(api_user_bot, [api_msg, *retriever], api_msg, api_name="message-query")
         api_msg_llm.submit(api_user_llm, api_msg_llm, api_msg_llm, api_name="message-direct-llm")
 
@@ -418,7 +418,7 @@ def main():
             outputs=[progress_k, drop_retriever, config_txt], api_name="upload-knowledge")
 
     # App Main Settings
-    app.queue(max_size=100, api_open=args.api, concurrency_count=args.concurrencycount)
+    app.queue(max_size=100, api_open=args.api)
     app.launch(share=False, server_name="0.0.0.0")
 
 if __name__ == "__main__":
