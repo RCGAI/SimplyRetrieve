@@ -78,8 +78,11 @@ def update_config(progress=gr.Progress(), *config):
     progress(0.8, desc="Initializing Knowledge Base")
     if args.retriever:
         retriever_name, knowledge, index, encoder, retriever_mode, embed_mode = initialize_retriever(kwargs)
+    retriever_name_tuple = []
+    for item in retriever_name:
+        retriever_name_tuple.append((item, item))
     print("Update Config Completed")
-    return "Update Complete", gr.Dropdown.update(choices=retriever_name)
+    return "Update Complete", gr.Dropdown(choices=retriever_name_tuple)
 
 # Update KnowledgeBase
 def update_knowledge(config, path_files, k_dir, k_basename, k_disp, k_desc, progress=gr.Progress()):
@@ -90,7 +93,10 @@ def update_knowledge(config, path_files, k_dir, k_basename, k_disp, k_desc, prog
         config_loaded = insert_knowledge(config_loaded, k_dir, k_basename, k_disp, k_desc)
         kwargs["retriever_config"]["retriever"] = config_loaded["retriever_config"]["retriever"]
         retriever_name, knowledge, index, encoder, retriever_mode, embed_mode = initialize_retriever(kwargs)
-    return status, gr.Dropdown.update(choices=retriever_name), json.dumps(config_loaded, indent=4)
+    retriever_name_tuple = []
+    for item in retriever_name:
+        retriever_name_tuple.append((item, item))
+    return status, gr.Dropdown(choices=retriever_name_tuple), json.dumps(config_loaded, indent=4)
 
 # Load Logs
 def load_logs():
