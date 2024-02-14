@@ -101,7 +101,7 @@ pyrsistent==0.19.3
 python-dateutil==2.8.2
 python-docx==0.8.11
 python-magic==0.4.27
-python-multipart==0.0.6
+python-multipart==0.0.9
 python-pptx==0.6.21
 pytz==2023.3
 PyYAML==6.0
